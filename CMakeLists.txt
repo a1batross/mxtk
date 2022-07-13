@@ -1,7 +1,13 @@
 cmake_minimum_required(VERSION 2.8.12)
 
 project(mxtk)
-include(CompilerRuntime)
+
+if(NOT WIN32)
+	set(CMAKE_AUTOMOC ON)
+	set(CMAKE_AUTORCC ON)
+	set(CMAKE_AUTOUIC ON)
+	find_package(Qt5 COMPONENTS OpenGL REQUIRED)
+endif()
 
 file(GLOB SOURCES_COMMON "src/common/*.cpp")
 if(MSVC)
@@ -45,7 +51,7 @@ if(MSVC)
 	target_compile_options(${PROJECT_NAME} PRIVATE $<$<CONFIG:Release>:/O1>) # enable optimizing to minimize size
 endif()
 
-if(MSVC)
+if(WIN32)
 	target_link_libraries(${PROJECT_NAME} PRIVATE
 		"shlwapi"
 		"comctl32"
@@ -57,13 +63,10 @@ if(MSVC)
 	)
 else()
 	target_link_libraries(${PROJECT_NAME} PRIVATE
-		"Qt5OpenGL"
+		Qt5::OpenGL
 		"gl"
 	)
 endif()
-
-# set static compiler runtime
-set_compiler_runtime(${PROJECT_NAME} STATIC)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
 	POSITION_INDEPENDENT_CODE 1)
