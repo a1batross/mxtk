@@ -11,7 +11,7 @@
 //                 provided without guarantee or warrantee expressed or
 //                 implied.
 //
-#include "mxPopupMenu_i.h"
+#include "mxPopupMenu_p.h"
 #include <QApplication>
 
 

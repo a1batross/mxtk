@@ -11,7 +11,7 @@
 //                 provided without guarantee or warrantee expressed or
 //                 implied.
 //
-#include "mxSlider_i.h"
+#include "mxSlider_p.h"
 
 
 

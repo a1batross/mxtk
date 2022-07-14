@@ -11,7 +11,7 @@
 //                 provided without guarantee or warrantee expressed or
 //                 implied.
 //
-#include "mxTreeView_i.h"
+#include "mxTreeView_p.h"
 
 
 

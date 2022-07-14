@@ -11,7 +11,7 @@
 //                 provided without guarantee or warrantee expressed or
 //                 implied.
 //
-#include "mxRadioButton_i.h"
+#include "mxRadioButton_p.h"
 
 
 

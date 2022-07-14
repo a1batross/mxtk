@@ -11,7 +11,7 @@
 //                 provided without guarantee or warrantee expressed or
 //                 implied.
 //
-#include "mxButton_i.h"
+#include "mxButton_p.h"
 
 
 

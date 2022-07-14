@@ -11,7 +11,7 @@
 //                 provided without guarantee or warrantee expressed or
 //                 implied.
 //
-#include "mxListBox_i.h"
+#include "mxListBox_p.h"
 
 
 

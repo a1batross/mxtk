@@ -27,9 +27,9 @@ SHARED_LIB_EXT = so
 
 MOC ?= moc
 
-MOC_HEADERS = $(wildcard src/$(PLATFORM)/*_i.h)
+MOC_HEADERS = $(wildcard src/$(PLATFORM)/*_p.h)
 MOC_PREFIX = $(subst $(PLATFORM)/,$(PLATFORM)/moc_,$(MOC_HEADERS))
-MOC_SRC = $(MOC_PREFIX:%_i.h=%.cpp)
+MOC_SRC = $(MOC_PREFIX:%_p.h=%.cpp)
 MOC_OBJS = $(MOC_SRC:%.cpp=%.o)
 
 INCLUDE = $(shell pkg-config --cflags Qt5OpenGL gl)
@@ -57,7 +57,7 @@ $(SHARED_LIB): $(OBJS) $(MOC_OBJS)
 	$(CXX) $(OBJS) $(MOC_OBJS) $(LDFLAGS) $(LIBS) -o $(SHARED_LIB)
 
 #ifeq (, $(findstring mingw, $(SYS)))
-moc_%.cpp: %_i.h
+moc_%.cpp: %_p.h
 	$(MOC) $< -o $@
 #endif
 

@@ -6,7 +6,6 @@ if(NOT WIN32)
 	set(CMAKE_AUTOMOC ON)
 	set(CMAKE_AUTORCC ON)
 	set(CMAKE_AUTOUIC ON)
-	find_package(Qt5 COMPONENTS OpenGL REQUIRED)
 endif()
 
 file(GLOB SOURCES_COMMON "src/common/*.cpp")
@@ -21,6 +20,7 @@ add_library(${PROJECT_NAME} STATIC ${SOURCES_COMMON})
 
 target_include_directories(${PROJECT_NAME} PRIVATE
 	"include"
+	"src/qt"
 )
 
 if(NOT MSVC)
@@ -62,9 +62,10 @@ if(WIN32)
 		"winmm"
 	)
 else()
+	find_package(Qt5 COMPONENTS OpenGL REQUIRED)
 	target_link_libraries(${PROJECT_NAME} PRIVATE
 		Qt5::OpenGL
-		"gl"
+		"GL"
 	)
 endif()
 

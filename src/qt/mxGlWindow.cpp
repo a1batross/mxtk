@@ -11,7 +11,7 @@
 //                 provided without guarantee or warrantee expressed or
 //                 implied.
 //
-#include "mxGlWindow_i.h"
+#include "mxGlWindow_p.h"
 
 
 

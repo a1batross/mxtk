@@ -11,7 +11,7 @@
 //                 provided without guarantee or warrantee expressed or
 //                 implied.
 //
-#include "mxMenuBar_i.h"
+#include "mxMenuBar_p.h"
 
 QMap<int, QAction*> g_actionList;
 

@@ -11,7 +11,7 @@
 //                 provided without guarantee or warrantee expressed or
 //                 implied.
 //
-#include "mxTab_i.h"
+#include "mxTab_p.h"
 
 
 
