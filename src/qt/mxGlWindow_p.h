@@ -34,6 +34,7 @@ public:
 		d_dragging = false;
 		d_button = 0;
 		setMouseTracking (true);
+		setAttribute(Qt::WA_NoMousePropagation, true);
 	}
 
 	~mxGlWindow_i ()
